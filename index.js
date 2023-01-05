@@ -9,14 +9,14 @@ app.use(express.urlencoded({ extended: true }));
 
 // Redirect
 app.get('/', (req, res) => {
-    res.redirect('/api/');
+    res.redirect('/api/tax');
 });
 
 // ADD CONTROLLERS
 // REF booke
-//const ordersController = require('./controllers/ordersController');
+const taxController = require('./controllers/taxController');
 
-//app.use('/api/orders', ordersController);
+app.use('/api/tax', taxController);
 
 // END CONTROLLERS
 // REF booke

@@ -24,6 +24,16 @@ router.get('/', async (req, res, next) => {
 // GET, single
 
 // POST
+router.post('/', async(req,res,rext) => {
+    try {
+        // create new Tax
+        const newTax = await Tax.create(req.body);
+        // send response in JSON and status code 201
+        res.status(201).json(newTax);
+    } catch(err) {
+        next(err);
+    }
+});
 
 // PUT
 
