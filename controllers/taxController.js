@@ -5,7 +5,7 @@ const express = require('express');
 const router = express.Router();
 
 // import Tax model
-const Tax = require('../models/Tax');
+const Tax = require('../models/tax');
 
 // ROUTES
 
