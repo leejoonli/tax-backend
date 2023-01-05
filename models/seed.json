@@ -1,0 +1,12 @@
+[
+    {
+        "firstName": "lulu",
+        "lastName": "pham",
+        "tax": [
+            {
+                "year": 2022,
+                "taxesOwed": 2000
+            }
+        ]
+    }
+]
