@@ -13,7 +13,7 @@ const TaxSchema = new mongoose.Schema({
 });
 
 // instantiate the model
-const Tax = mongoose.model('tax', TaxSchema);
+const Tax = mongoose.model('Tax', TaxSchema);
 
 // export
 module.exports = Tax;
