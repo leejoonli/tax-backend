@@ -22,6 +22,18 @@ router.get('/', async (req, res, next) => {
 });
 
 // GET, single
+router.get('/:id', async(req,res,next) => {
+    try {
+        const tax = await Tax.findById(req.params.id);
+        if(tax) {
+            res.json(tax);
+        } else {
+            res.sendStatus(404);
+        }
+    } catch(err) {
+        next(err);
+    }
+});
 
 // POST
 router.post('/', async(req,res,next) => {
@@ -40,6 +52,18 @@ router.post('/', async(req,res,next) => {
 // PATCH
 
 // DELETE
+router.delete('/:id', async(req,res,next) => {
+    try {
+        const deletedTax = await Tax.findByIdAndDelete(req.params.id);
+        if(deletedTax) {
+            res.json(deletedTax);
+        } else {
+            res.sendStatus(404);
+        }
+    } catch(err) {
+        next(err);
+    }
+});
 
 // export
 module.exports = router;
