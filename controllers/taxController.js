@@ -24,7 +24,7 @@ router.get('/', async (req, res, next) => {
 // GET, single
 
 // POST
-router.post('/', async(req,res,rext) => {
+router.post('/', async(req,res,next) => {
     try {
         // create new Tax
         const newTax = await Tax.create(req.body);
