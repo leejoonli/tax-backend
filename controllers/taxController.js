@@ -48,8 +48,25 @@ router.post('/', async(req,res,next) => {
 });
 
 // PUT
+router.put('/:id', async(req,res,next) => {
+    try {
+        // find tax to update
+        const updateTax = await Tax.findByIdAndUpdate(req.params.id, req.body, {new: true, overwrite: true});
+        res.json(updateTax);
+    } catch (err) {
+        next(err);
+    }
+});
 
 // PATCH
+router.patch('/:id', async(req,res,next) => {
+    try {
+        const updateTax = await Tax.findByIdAndUpdate(req.params.id, {$set: req.body}, {new:true});
+        res.json(updateTax);
+    } catch(err) {
+        next(err);
+    }
+});
 
 // DELETE
 router.delete('/:id', async(req,res,next) => {
