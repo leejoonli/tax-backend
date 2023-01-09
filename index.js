@@ -1,11 +1,13 @@
 // Config
 const express = require('express');
 const app = express();
+const cors = require('cors');
 app.set('port', process.env.PORT || 8000);
 
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cors());
 
 // Redirect
 app.get('/', (req, res) => {
